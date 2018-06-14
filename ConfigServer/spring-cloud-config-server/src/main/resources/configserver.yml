@@ -1,0 +1,25 @@
+info:
+  component: Config Server
+spring:
+  application:
+    name: configserver
+  profiles:
+    #active: git #comment this line out and uncomment next line to activate vault backend
+    active: vault
+  jmx:
+    default_domain: cloud.config.server
+  cloud:
+    config:
+      server:
+        git:
+          uri: file:../config-repo
+        vault:
+          backend: secret
+          defaultKey: application
+
+server:
+  port: 8888
+management:
+  context_path: /admin
+encrypt:
+  key: mysupersecretencryptionpassword

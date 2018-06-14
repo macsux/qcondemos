@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: helloworld
+
+#-- Uncomment next two lines to include helloworld-dev.yml as one of the property sources
+#  profiles:
+#    active: dev
+
+  cloud:
+    config:
+      token: YOUR-TOKEN-HERE # when using Vault backend, set this value to token ID which can be retrieved via "vault token lookup" command
+# Uncomment to target the release git branch. Notice the change in Display message
+#      label: release
+
+# expose /refresh endpoint to be accessable without security in our demo - by default this point is secured
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: EurekaSpringClient
+eureka:
+  instance:
+    hostname: localhost
+    nonSecurePort: 8080
+    instanceId: andrewEurekaInstance
